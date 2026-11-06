@@ -24,8 +24,8 @@ jobs:
           { grep -E "^e: |error:|AssertionError|Test.*FAILED" build.log; grep -A6 "What went wrong" build.log; tail -15 build.log; } | head -45 | while IFS= read -r line; do echo "::error::${line}"; done || true
       - name: Publish APK to the "apk" branch
         run: |
-          mkdir out && cp app/build/outputs/apk/release/app-release.apk out/Tarefas.apk
+          mkdir out && cp app/build/outputs/apk/release/app-release.apk out/Kairos.apk
           cd out && git init -q -b apk
           git config user.name "github-actions"; git config user.email "github-actions@users.noreply.github.com"
-          git add Tarefas.apk && git commit -q -m "build ${{ github.run_number }}"
+          git add Kairos.apk && git commit -q -m "build ${{ github.run_number }}"
           git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" apk

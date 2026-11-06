@@ -221,7 +221,7 @@ fun ListScreen(
             item {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f)) {
-                        Text("Tarefas", fontSize = 32.sp, fontWeight = FontWeight.Bold, color = Ink)
+                        Text("Kairos", fontSize = 32.sp, fontWeight = FontWeight.Bold, color = Ink)
                         val n = tasks.count { it.active }
                         Text(if (n == 1) "1 ativa" else "$n ativas", color = Muted, fontSize = 14.sp)
                     }
